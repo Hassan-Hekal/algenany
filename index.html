@@ -301,11 +301,11 @@ tbody tr:hover td{background:rgba(255,255,255,0.03)}
     </div>
   </div>
   <nav class="nav">
-    <button class="nav-btn active" onclick="switchPage('input',this)">
+    <button class="nav-btn" onclick="switchPage('input',this)">
       <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
       <span>إدخال البيانات</span>
     </button>
-    <button class="nav-btn" onclick="switchPage('dashboard',this)">
+    <button class="nav-btn active" onclick="switchPage('dashboard',this)">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       <span>لوحة العرض</span>
     </button>
@@ -324,7 +324,7 @@ tbody tr:hover td{background:rgba(255,255,255,0.03)}
 </div>
 
 <!-- ========== INPUT PAGE ========== -->
-<div id="page-input" class="page active">
+<div id="page-input" class="page">
 
   <div class="sec-header">
     <div class="sec-title">إدخال بيانات الشهر</div>
@@ -405,7 +405,7 @@ tbody tr:hover td{background:rgba(255,255,255,0.03)}
 </div>
 
 <!-- ========== DASHBOARD PAGE ========== -->
-<div id="page-dashboard" class="page">
+<div id="page-dashboard" class="page active">
   <div class="sec-header">
     <div class="sec-title">لوحة المتابعة والتحليل</div>
     <div class="sec-sub">نظرة شاملة على أداء الفروع والكول سنتر</div>
@@ -689,6 +689,7 @@ function renderDashboard(){
 /* ── INIT ── */
 buildForms();
 loadForm(4);
+renderDashboard();
 </script>
 </body>
 </html>
