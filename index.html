@@ -518,12 +518,24 @@ function clearForm(){
 }
 
 /* ── SWITCH PAGE ── */
-function switchPage(p,btn){
-  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));
-  document.getElementById('page-'+p).classList.add('active');
-  if(btn)btn.classList.add('active');
-  if(p==='dashboard')renderDashboard();
+function switchPage(p, btn) {
+
+  // 🔐 حماية صفحة الإدخال
+  if (p === "input") {
+    let pass = prompt("Enter password:");
+
+    if (pass !== "201") {
+      alert("Wrong password");
+      return; // يمنع فتح الصفحة
+    }
+  }
+
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-' + p).classList.add('active');
+  if (btn) btn.classList.add('active');
+
+  if (p === 'dashboard') renderDashboard();
 }
 
 /* ── MONTH CHANGE ── */
